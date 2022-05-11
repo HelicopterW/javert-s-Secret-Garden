@@ -1,0 +1,18 @@
+
+<table border="1">
+	<tr>
+		<td>id</td>
+		<td>标题</td>
+		<td>时间</td>
+		<td>编辑</td>
+	</tr>
+	<!-- $data 查询新闻的数组 -->
+	<?php foreach($data as $v):?>
+	<tr>
+		<td><?php echo $v['id']; ?></td>
+		<td><a href="show.php?id=<?php echo $v['id']; ?>"><?php echo $v['title']; ?></a></td>
+		<td><?php echo $v['addtime']; ?></td>
+		<td class="center"><a href="./edit.php?id=<?php echo $v['id']; ?>">编辑</a>　<a href="./del.php?id=<?php echo $v['id']; ?>" onclick="return confirm('确定要删除该新闻吗？');">删除</a></td>
+	</tr>
+	<?php endforeach;?>
+</table>
